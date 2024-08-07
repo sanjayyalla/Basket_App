@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGO_DB_LOCAL_URL)
         process.exit(1);
     });
 const hostname = process.env.HOST_NAME;
-const port = process.env.PORT;
+const port = process.env.PORT || 4000
 app.use('/api', require('./router/apiRouter'));
 app.listen(port, hostname, () => {
     console.log(`Express Server is Started at http://${hostname}:${port}`);
